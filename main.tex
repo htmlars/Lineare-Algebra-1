@@ -1,0 +1,285 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{amsmath} % Required for mathematical symbols
+\usepackage{amssymb} % Required for more mathematical symbols
+\usepackage{amsthm}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem} % For smaller bullet points
+\usepackage{hyperref}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\title{S1LA1Ü2}
+\author{Lars Schlichting, Leo Pritzkoleit}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\paragraph{2.1}
+
+Die Gerade $G$ im $\mathbb{R}^{3}$ sei gegeben durch die Gleichungen
+
+$$2x_1-3x_2+x_3=3 \text{ und } x_1+x_2+2x_3=1$$
+
+\noindent Für eine fest gewählte reelle Zahl $a \in \mathbb{R}$ sei die Ebene $E_a$ im $\mathbb{R}^{3}$ gegeben durch die Gleichung
+
+$$5x_1-5x_2+a^{2}x_3=3a+1$$
+
+\noindent Untersuchen Sie, für welche Werte von $a$ sich die Gerade G und die Ebene E schneiden bzw. parallel sind bzw. $G$ in $E$ enthalten ist.\\
+
+\begin{proof}
+
+\noindent Die Gerade ist durch folgendes LGS beschreibbar:
+
+\[
+\begin{aligned}
+    2x_1 - 3x_2 + x_3 &= 3 \\
+    x_1 + x_2 + 2x_3 &= 1
+\end{aligned}
+\]
+
+\noindent $\ast_1 = \ast_1 - 2\cdot \ast_2$\newline
+
+\[
+\begin{aligned}
+    -5x_2 - 3x_3 &= 1 \\
+    x_1 + x_2 + 2x_3 &= 1
+\end{aligned}
+\]
+
+\noindent Wir setzen $x_3 = \lambda$\newline
+\noindent Wir können dann die obere Gleichung nach $x_2$ umstellen
+
+\[
+\begin{aligned}
+    -5x_2 &= 1+3\lambda\\ 
+    x_2 &= \frac{-3\lambda-1}{5}
+\end{aligned}
+\]
+
+\noindent Wir haben jetzt $x_2$ in Abhängigkeit von $\lambda$ beschrieben und setzen in $\ast_2$ ein.
+
+\[
+\begin{aligned}
+    x_1 + \frac{-3\lambda-1}{5} + 2\lambda = 1&\\
+    5x_1 - 3\lambda - 1 + 10\lambda = 5&\\
+    5x_1 = 6 - 7\lambda&\\
+    x_1 = \frac{6-7\lambda}{5}&
+\end{aligned}
+\]
+
+\noindent Unsere parametrisierte Geradengleichung mit $\lambda$ als freie Variable lautet:
+
+$$
+\begin{pmatrix} \frac{6}{5} \\ -\frac{1}{5} \\ 0 \end{pmatrix} + \lambda \begin{pmatrix} -\frac{7}{5} \\ -\frac{3}{5} \\ 1 \end{pmatrix}
+$$\\
+
+\noindent Nun können wir dies in unsere Ebenengleichung einsetzen und erhalten:
+
+$$
+5(\frac{6}{5}-\frac{7}{5}\lambda)-5(-\frac{1}{5}-\frac{3}{5}\lambda)+a^{2}\lambda=3a+1
+$$
+
+\noindent Dies vereinfacht sich zu
+
+\[
+\begin{aligned}
+6 - 7\lambda + 1 + 3\lambda + a^2 \lambda &= 3a + 1, \\
+7 + (-4 + a^2)\lambda &= 3a + 1, \\
+(-4 + a^2)\lambda &= 3a - 6, \\
+\lambda = \frac{3a - 6}{a^2 -4} &= \frac{3}{a + 2}.
+\end{aligned}
+\]\\
+
+\noindent Wenn wir $a = 2$ in die obige Gleichung $(-4 + a^2)\lambda = 3a - 6, \\$ einsetzen, erhalten wir $0 = 0$. Die Gleichung ist immer wahr, egal welchen Wert $\lambda$ annimmt. Das bedeutet, dass für $a = 2$ die Gerade G in der Ebene E enthalten ist.\\
+
+\noindent Da wir nun $\lambda$ haben, können wir es in die Geradengleichung einsetzen und erhalten
+
+$$
+\begin{pmatrix} \frac{6}{5} \\ -\frac{1}{5} \\ 0 \end{pmatrix} + \frac{3}{a+2} \begin{pmatrix} -\frac{7}{5} \\ -\frac{3}{5} \\ 1 \end{pmatrix}
+$$\\
+
+\noindent Zusammengefasst ergeben die Lösungen des Gleichungssystems für die Gerade $G$ und die Ebene $E_a$:
+
+$$x_1 = \frac{3(2a-3)}{5(a+2)}, x_2 = \frac{-a-11}{5(a+2)}, x_3 = \frac{3}{a+2}$$
+
+\noindent Dies zeigt, dass es für alle Werte $a \neq -2 \land a \neq 2$ einen eindeutigen Schnittpunkt zwischen Gerade $G$ und Ebene $E_a$ gibt. Wenn jedoch $a = -2$, dann führt dies zur Division durch 0 und demnach sind die Gerade und die Ebene dafür parallel, da keine Lösung für $\lambda$ existiert. Für $a = 2$ ist die Gerade in der Ebene enthalten.
+
+\end{proof}
+
+\paragraph{2.2} 
+
+Sei $a \in \mathbb{R}$. Zeigen Sie dass das Gleichungssystem
+\[
+\begin{aligned}
+    ax &+ (a + 1)y &+ (a + 2)z &= 0 \\
+    (a + 3)x &+ (a + 4)y &+ (a + 5)z &= 0 \\
+    (a + 6)x &+ (a + 7)y &+ (a + 8)z &= 0
+\end{aligned}
+\]
+nicht nur die triviale Lösung besitzt.
+
+\begin{proof}
+
+Multiplizieren wir die 3 Gleichungen aus, so erhalten wir:
+
+\[
+\begin{aligned}
+    ax &+ ay &+ y &+ az &+ 2z &= 0 \\
+    ax &+ 3x &+ ay &+ 4y &+ az &+ 5z &= 0 \\
+    ax &+ 6x &+ ay &+7y &+ az &+ 8z &= 0
+\end{aligned}
+\]\\
+
+\noindent $\ast_2 = \ast_2 - \ast_1$\newline
+\noindent $\ast_3 = \ast_3 - \ast_2$
+
+\[
+\begin{aligned}
+    ax + ay + y + az + 2z &= 0 \\
+    3x + 3y + 3z &= 0 \\
+    3x + 3y + 3z &= 0
+\end{aligned}
+\]\\
+
+\noindent $\ast_2 = \ast_3$\newline
+\noindent $\ast_2 \cdot \frac{1}{3}$
+
+\[
+\begin{aligned}
+    ax + ay + y + az + 2z &= 0 \\
+    x + y + z &= 0
+\end{aligned}
+\]\\
+
+\noindent Wir wählen $x = z$ und damit $y = -2x$\newline
+\noindent Zum Prüfen setzen wir ein:
+
+\[
+\begin{aligned}
+    ax &+ a(-2x) &+ (-2x) &+ ax &+ 2x &= 0 \\
+\end{aligned}
+\]\\
+
+\noindent Dies ergibt 0 und somit ist die Lösungsmenge definiert als:
+
+\[
+\left\{ \begin{pmatrix} x \\ -2x \\ x \end{pmatrix} \mid x \in \mathbb{R} \right\}
+\]
+
+\end{proof}
+
+\paragraph{2.3} Gegeben seien Mengen $X, Y$ und $Z$, sowie zwei Abbildungen $f: X \to Y$ und $g: Y \to Z$. 
+
+\paragraph{(a)} Sind $f$ und $g$ injektiv (bzw. surjektiv), so ist $g \circ f$ injektiv (bzw. surjektiv)\\
+
+\begin{proof}
+
+\noindent Da $f$ injektiv ist, gilt $\{\forall x_1, x_2 \in X: x_1 = x_2 \Rightarrow f(x_1) = f(x_2)\}$. Analoges gilt für $g$.\\
+
+\noindent Seien $x_1, x_2 \in X$ und wir nehmen an, dass $x_1 \neq x_2$, jedoch $(g \circ f)(x_1) = (g \circ f)(x_2)$. Diese Ausdrücke sind gleichbedeutend mit: $g(f(x_1)) = g(f(x_2))$. Da $g$ injektiv ist, gilt $f(x_1) = f(x_2)$. Aus der Injektivität von $f$ folgt dann, dass $x_1 = x_2$. Widerspruch zur Annahme, dass $x_1 \neq x_2$.\\
+
+\noindent Somit haben wir gezeigt, dass $g \circ f$ injektiv ist, falls $f$ und $g$ injektiv sind.
+
+\end{proof}
+
+\begin{proof}
+
+\noindent Da $f$ surjektiv ist, gilt $\{\forall y \in Y: \exists x \in X$, sodass $f(x) = y\}$. Analoges gilt für $g$. Sei $z \in Z$ und wir nehmen an, dass $\{\forall x \in X: g(f(x)) \neq z\}$.
+Aus der Surjektivität von $g$ folgt, dass $\{\exists y \in Y: g(y) = z\}$. Also ist $g^{-1}(z) \neq \emptyset$. Durch die Surjektivität von $f$ folgt, dass $\{\exists x \in X: f(x) = y\}$. Also ist $f^{-1}(y) \neq \emptyset$. Widerspruch zur Annahme $\{\forall x \in X: g(f(x)) \neq z\}$.\\
+
+\noindent Somit haben wir gezeigt, dass $g \circ f$ surjektiv ist, falls $f$ und $g$ surjektiv sind.
+
+\end{proof}
+
+\paragraph{(b)} Ist $g \circ f$ injektiv (bzw. surjektiv), so ist $f$ injektiv (bzw. $g$ surjektiv).
+
+\begin{proof}
+
+\noindent Da $g \circ f$ injektiv, $\{\forall x_1, x_2 \in X: g(f(x_1)) = g(f(x_2)) \Rightarrow x_1 = x_2\}$. Seien $x_1 \neq x_2 \in X$ und $f$ nicht injektiv, dann ist $f(x_1) = f(x_2)$ möglich.
+Daraus folgt, dass $g(f(x_1)) = g(f(x_2))$. Durch die Injektivität von $g \circ f$ folgt $x_1 = x_2$, was ein Widerspruch zur Voraussetzung $x_1 \neq x_2$ ist.\\
+
+\noindent Somit haben wir gezeigt, dass wenn $g \circ f$ injektiv ist, dann ist $f$ injektiv.
+
+\end{proof}
+
+\begin{proof}
+
+\noindent Da $g \circ f$ surjektiv, $\{\forall z \in Z: \exists x \in X$, sodass $g(f(x)) = z\}$. Sei $g$ nicht surjektiv. Dann kann es ein Element $z \in Z$ geben, sodass \{$\nexists y \in Y$, sodass $g(y) = z$\} Durch die Surjektivität von $g \circ f$ muss dies jedoch gewährleistet sein.\\
+
+\noindent Somit haben wir gezeigt, dass wenn $g \circ f$ surjektiv ist, dann ist $g$ surjektiv.
+
+\end{proof}
+
+\paragraph{(c)} Ist $g \circ f$ injektiv und $f$ surjektiv, so ist $g$ injektiv.\\
+
+\begin{proof}
+
+\noindent Seien $x_1 \neq x_2 \in X$ und $y_1, y_2 \in Y$. Wir nehmen an, dass $f(x_1) = y_1$ und $f(x_2) = y_2$. Gehen wir davon aus, $g$ müsse nicht injektiv sein und $g(y_1) = g(y_2)$.
+Dies würde bedeuten, dass $g(f(x_1)) = g(f(x_2))$ mit $x_1 \neq x_2$, wodurch $g \circ f$ nicht injektiv wäre.\\
+
+\noindent Somit haben wir gezeigt, dass $g$ injektiv sein muss, wenn $f$ surjektiv und $g \circ f$ injektiv.
+
+\end{proof}
+
+\paragraph{(d)} Nehmen Sie $X = Z$ an und konstruieren Sie ein Beispiel, in dem $g \circ f$ bijektiv, $f$ aber nicht surjektiv und $g$ nicht injektiv.\\
+
+\noindent Seien $X = Z = \mathbb{N}$ und $Y = \mathbb{N}_0$. Wir definieren die nicht surjektive Abbildung $f: X \to Y$, $x \mapsto x$. Da die $0 \in Y$ nicht getroffen wird, ist die Abbildung $f$ nicht surjektiv. Die Abbildung $g$ definieren wir so, dass jedes $y \in Y$ wieder auf sich selbst in $Z$ abgebildet wird. Die $0$ bilden wir auf ein beliebiges $z \in Z$ ab, beispielsweise auf die $1$. Somit ist die Abbildung g nicht injektiv, da $g(0) = g(1)$. Die Komposition $g \circ f$ ist jedoch bijektiv, da jedes $x \in X$ auf sich selbst in $Z$ abgebildet wird. \\
+
+\paragraph{2.4}
+
+\noindent Es sei $I$ eine Menge. Zu jedem Element $i \in I$ sei eine Menge $X_i$ gegeben, und für $j \in I$ bezeichne $p_j: \prod_{i \in I}X_i \to X_j$ die durch $p_j((x_i)_{i \in I}) := x_j$ definierte j-te Projektionsabbildung.
+Sind $X$ und $Y$ Mengen, so sei Abb($X, Y$) := \{Abbildungen $f$: $X \to Y$\} die Menge aller Abbildungen von der Menge $X$ in die Menge $Y$. Zeigen Sie, dass die durch ($f \mapsto (p_i \circ f)_{i \in I})$ definierte Abbildung
+
+$$\text{Abb}(X, \prod_{i \in I}X_i) \to \prod_{i \in I}\text{Abb}(X, X_i)$$
+
+\noindent bijektiv ist. \\ \\
+
+\noindent Wir wollen die Abbildung $\text{Abb}(X, \prod_{i \in I}X_i) \to \prod_{i \in I}\text{Abb}(X, X_i), (f \mapsto (p_i \circ f)_{i \in I})$ im folgenden $c$ nennen.\\ 
+
+\noindent Sei $f$ eine beliebige Funktion aus $D(c) :=$ Abb($X, \prod_{i \in I}X_i$). ($f \mapsto (p_i \circ f)_{i \in I}$) wendet nun die Funktion $p_i$ auf die Abbildung $f$ an und zerteilt diese in ihre einzelnen Komponenten $f_i \in f$, wobei $f_i$ nur auf $X_i$ wirkt. Die Menge der Funktionskomponenten $f_i$ ist somit im $Z(f) := \prod_{i \in I}\text{Abb}(X, X_i)$.\\
+
+\begin{proof} Wir zeigen, dass $c$ sowohl injektiv, als auch surjektiv.
+
+\paragraph{Widerspruchsbeweis zur Injektivität}\hspace{50mm}\\
+
+\noindent Nach der Def. von Injektivität gilt: ($\forall x_1, x_2 \in X \mid f(x_1) = f(x_2) \Rightarrow x_1 = x_2$).\\
+
+\noindent Annahme: Seien $g \neq h \in D(c)$  mit $(p_i \circ g) = (p_i \circ h)$.\\
+
+\noindent $\Rightarrow (g_i) = (h_i)$ $\forall i \in I \overset{\text{Def. von $p_i$}}{\Rightarrow}$ $\forall i \in I$, $\forall x \in X$: i-te Stelle von $g(x) =$ i-te Stelle von $h(x)$.\\
+
+\noindent $\Rightarrow f = g$, was der Annahme widerspricht.\\
+
+\noindent Dies zeigt, dass die Abbildung $c$ injektiv ist.
+
+\paragraph{Surjektivität}\hspace{50mm}\\
+
+\noindent Nach der Def. von Surjektivität gilt: ($\forall y \in Y \mid \exists x \in X$ mit $f(x) = y$).\\
+
+\noindent Annahme: Sei $k$ = ($(f_i)_{i \in I}$) $\in Z(c)$, sodass ($\exists g \in D(c)$ mit $(p_i \circ g)_{i \in I} = k$).\\
+
+\noindent Sei nun $j \in D(c) := j(x) = (f_i(x))_{i \in I}$.\\
+
+\noindent $\Rightarrow \forall i \in I$: $p_i \circ j = f_i$.\\
+
+\noindent Da $D(c)$ die Menge aller Abbildungen von $X$ in $\prod_{i \in I} X_i$ ist, kann $j$ so gewählt werden, dass diese Bedingung erfüllt ist.\\
+
+\noindent Somit ist $c(j) = (p_i \circ j)_{i \in I} = (f_i)_{i \in I} = k$.\\
+
+\noindent Da für jedes $k \in Z(c)$ ein $g \in D(c)$ existiert, sodass $c(g) = k$, ist die Abbildung $c$ surjektiv.\\
+
+\noindent Da $c$ sowohl injektiv, als auch surjektiv ist, ist $c$ bijektiv, was gezeigt werden sollte.\\
+
+\end{proof}
+
+
+
+
+\end{document}
